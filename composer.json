@@ -1,0 +1,11 @@
+{
+    "name": "marti/php_framework",
+    "autoload": {
+        "psr-4": {
+            "Marti\\PhpFramework\\": "src/"
+        }
+    },
+    "require": {
+        "firebase/php-jwt": "^6.10"
+    }
+}
