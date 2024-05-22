@@ -4,8 +4,8 @@ namespace config;
 
 require_once __DIR__ . '\..\..\Autoloader.php';
 
+use model\TestModel;
 
-use model\UserModel;
 
 class Req
 {
@@ -96,7 +96,7 @@ if (isset(Req::getReqBody()['file'])) {
 	) {
 		file_put_contents($fileName, $File_Data);
 
-		$dataFormDataBase = UserModel::CallProcedure(Req::$fileData, "createFile");
+		$dataFormDataBase = TestModel::CallProcedure(Req::$fileData, "createFile");
 		Req::$fileData =  $dataFormDataBase["data"][0];
 	}
 }

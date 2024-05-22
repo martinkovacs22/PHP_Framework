@@ -13,7 +13,7 @@ use Firebase\JWT\Key;
 // JWTHandler osztály definiálása
 class JWThandler{
     // Titkos kulcs az aláíráshoz
-    private static  $secret = "userJWT";
+    private static  $secret = "JWT";
     // JWT generálása a kapott felhasználói adatok alapján
     public static function generateJWT($userData) {
         $currentTime = time();
@@ -58,24 +58,4 @@ class JWThandler{
     
     
 }
-/*
-namespace JsonWebToken;: Az osztályok névtere, ahol az JWTHandler osztály található.
-
-require 'vendor/autoload.php';: A külső függőségek (pl. Firebase JWT) autoload fájljának betöltése.
-
-use Exception;: Az Exception osztály importálása hiba kezeléséhez.
-
-use \Firebase\JWT\JWT;: Az Firebase JWT könyvtárban található JWT osztály importálása.
-
-use \Firebase\JWT\Key;: Az Firebase JWT könyvtárban található Key osztály importálása.
-
-class JWTHandler{...}: Az JWTHandler osztály definiálása, amely felelős a JWT generálásáért és ellenőrzéséért.
-
-public static function getInc(){...}: A singleton példány létrehozása és visszaadása.
-
-public function generateJWT($userData) {...}: A JWT generálását végző metódus. Az adott felhasználói adatokat JWT tokenná alakítja.
-
-public function verifyJWT($token) {...}: A JWT ellenőrzését és dekódolását végző metódus. Ellenőrzi a token érvényességét és visszaadja a dekódolt adatokat vagy false-t hiba esetén.
-*/
-
 

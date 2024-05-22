@@ -32,7 +32,7 @@ class SimplePHPMailer{
             $this->mail->AltBody = 'Body in plain text for non-HTML mail clients';
             $this->mail->send();
             //echo "Mail has been sent successfully!";
-        } catch (PHPEX $e) {
+        } catch (\Exception $e) {
            
             Exception::msg(array("err"=>true,"data"=>$e->getMessage()),HttpStatus::FORBIDDEN);
 

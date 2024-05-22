@@ -8,10 +8,8 @@ header("Content-Type:application/json");
 header("Access-Control-Allow-Methods:POST,OPTIONS");
 
 use config\Req;
-use controller\UserController;
-use controller\PostController;
-use controller\FileController;
-use controller\FaqController;
+use controller\TestController;
+
 use config\Exception;
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -27,19 +25,10 @@ Req::CONFIG_OPTIMALIZATION();
 
 if (Req::getReqMethod() === "POST") {
   
-
-    if (method_exists(UserController::class, Req::getReqFun())) {
-        UserController::{Req::getReqFun()}();
-        $headerCode_Res =  UserController::$res->getStatus_code();
-    } else if (method_exists(PostController::class, Req::getReqFun())) {
-        PostController::{Req::getReqFun()}();
-        $headerCode_Res =  PostController::$res->getStatus_code();
-    } else if (method_exists(FaqController::class, Req::getReqFun())) {
-        FaqController::{Req::getReqFun()}();
-        $headerCode_Res =  FaqController::$res->getStatus_code();
-    } else if (method_exists(FileController::class, Req::getReqFun())) {
-        FileController::{Req::getReqFun()}();
-        $headerCode_Res =  FileController::$res->getStatus_code();
+    
+    if (method_exists(TestController::class, Req::getReqFun())) {
+        TestController::{Req::getReqFun()}();
+        $headerCode_Res =  TestController::$res->getStatus_code();
     } else {
         Exception::msg(array("err" => true, "data" => "Bad Requiest not found Fun."));
     }
