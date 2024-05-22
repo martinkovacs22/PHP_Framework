@@ -1,11 +1,11 @@
 <?php
 session_start();
-header("Access-Control-Allow-Origin:*");
-header("Access-Control-Allow-Headers:Content-Type,Authorization,X-Requested-With,token");
-header("Access-Control-Max-Age:86400");
-header("Access-Control-Allow-Credentials:true");
-header("Content-Type:application/json");
-header("Access-Control-Allow-Methods:POST,OPTIONS");
+// header("Access-Control-Allow-Origin:*");
+// header("Access-Control-Allow-Headers:Content-Type,Authorization,X-Requested-With,token");
+// header("Access-Control-Max-Age:86400");
+// header("Access-Control-Allow-Credentials:true");
+// header("Content-Type:application/json");
+// header("Access-Control-Allow-Methods:POST,OPTIONS");
 
 use config\Req;
 use controller\TestController;
@@ -25,7 +25,7 @@ Req::CONFIG_OPTIMALIZATION();
 
 if (Req::getReqMethod() === "POST") {
   
-    
+
     if (method_exists(TestController::class, Req::getReqFun())) {
         TestController::{Req::getReqFun()}();
         $headerCode_Res =  TestController::$res->getStatus_code();

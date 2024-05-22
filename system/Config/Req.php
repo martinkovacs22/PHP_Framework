@@ -50,16 +50,15 @@ class Req
 		$CONFIG_DATA = parse_ini_file(__DIR__ . "\\..\\..\\config.ini", true);
 
 		foreach ($CONFIG_DATA as $key => $value) {
-			// if ($key == "header") {
-			// 	foreach ($CONFIG_DATA[$key] as $headerKey => $headerValue) {
-			// 		$dataFromHeaderValue = "";
-			// 		foreach ($CONFIG_DATA[$key][$headerKey] as $headerDataKey => $headerDataValue) {
-			// 			$dataFromHeaderValue = $dataFromHeaderValue . $headerDataValue;
-			// 		}
-			// 		header($headerKey . ":" . $dataFromHeaderValue);
-			// 	}
-			// } else
-			if ($key == "db") {
+			if ($key == "header") {
+				foreach ($CONFIG_DATA[$key] as $headerKey => $headerValue) {
+					$dataFromHeaderValue = "";
+					foreach ($CONFIG_DATA[$key][$headerKey] as $headerDataKey => $headerDataValue) {
+						$dataFromHeaderValue = $dataFromHeaderValue . $headerDataValue;
+					}
+					header($headerKey . ":" . $dataFromHeaderValue);
+				}
+			} else if ($key == "db") {
 				foreach ($CONFIG_DATA[$key] as $dbKey => $dbValue) {
 					$_SESSION[$key][$dbKey] = $dbValue;
 				}
