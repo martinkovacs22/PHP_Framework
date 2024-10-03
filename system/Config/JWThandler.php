@@ -1,6 +1,6 @@
 <?php
 
-namespace config;
+namespace Config;
 
 // Autoload.php fájl importálása a külső függőségek betöltéséhez
 

@@ -1,13 +1,13 @@
 <?php
-namespace config;
+namespace Config;
 
 require_once __DIR__ . '\..\..\Autoloader.php';
 require_once(__DIR__.'\..\..\vendor\autoload.php');
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception as PHPEX;
-use config\Exception;
-use config\HttpStatus;
+use Config\Exception;
+use Config\HttpStatus;
 
 class SimplePHPMailer{
     private $mail =null;// new PHPMailer\PHPMailer\PHPMailer();

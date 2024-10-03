@@ -1,6 +1,6 @@
 <?php
 
-namespace config;
+namespace Config;
 
 require_once __DIR__.'\HttpStatus.php';
 

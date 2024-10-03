@@ -1,6 +1,6 @@
 <?php
 
-namespace config;
+namespace Config;
 
 class HttpStatus {
     const OK = 200;

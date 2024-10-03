@@ -1,10 +1,10 @@
 <?php
 
-namespace config;
+namespace Config;
 
 require_once __DIR__ . '\..\..\Autoloader.php';
 
-use model\TestModel;
+use Model\TestModel;
 
 
 class Req
